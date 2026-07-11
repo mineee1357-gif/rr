@@ -183,18 +183,3 @@ if video_url:
                     
     else:
         st.error("유튜브 영상을 찾을 수 없습니다. URL 또는 Video ID를 다시 확인해주세요.")
-
----
-
-## 🚀 GitHub & Streamlit 배포 시 주의할 점!
-
-1. **`.gitignore`에 등록 (선택사항)**
-   혹시 로컬테스트용으로 `.streamlit/secrets.toml` 파일을 만드신다면, 이 파일은 절대 깃허브에 커밋(올리기)하지 마세요.
-2. **GitHub Secrets가 아닙니다! 💡**
-   * 중요하게 짚고 넘어갈 부분은, API 키를 **GitHub Settings -> Secrets**가 아니라, **스트림릿 클라우드(Streamlit Community Cloud) 웹사이트의 App 설정 창에 있는 Secrets** 공간에 넣으셔야 `st.secrets`가 정상적으로 작동합니다! 
-
-> **[스트림릿 세팅 방법]**
-> 스트림릿 대시보드 -> 내 앱 우측 점 3개 -> **Settings** -> **Secrets** 메뉴로 들어가서 아래처럼 적고 저장하시면 끝납니다.
-> ```toml
-> YOUTUBE_API_KEY = "AIzaSyYourActualAPIKeyHere..."
-> ```
